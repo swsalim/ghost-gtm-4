@@ -1,0 +1,56 @@
+{{!< default}}
+
+{{#post}}
+
+<!-- start: #page -->
+<main id="page" class="main grid-container">
+	
+    <!-- start: .center -->
+    <div id="single" class="center content fullcover" data-aos="fade">
+        
+        {{#if feature_image }}
+            <div class="featured-image cover content">
+                <img src="{{img_url feature_image size="single_fullcover"}}" alt="{{title}}" class="fullwidth">
+                <div class="info">
+                    <h1 class="title ularge bold">{{title}}</h1>
+                </div>
+            </div>
+        {{/if}}
+
+        <div class="content">
+            
+            <div class="row">
+        
+                <!-- start: .left-content -->
+                <div class="left-content grid-70 np-mobile">
+                    <article class="{{post_class}}">
+                    
+                        <section class="post-content">
+                            {{^if feature_image }}
+                                <h1 class="title ularge bold">{{title}}</h1>
+                            {{/if}}
+                            <div class="text">
+                                {{content}}
+                            </div>
+                            <div class="clear"></div>
+                        </section>
+                        
+                    </article>
+                </div>
+                <!-- end: .content -->
+
+                {{> sidebar }}
+                
+                <div class="clear"></div>
+
+            </div>
+
+        </div>
+    
+    </div>
+    <!-- end: .center -->
+    
+</main>
+<!-- end: #page -->
+
+{{/post}}

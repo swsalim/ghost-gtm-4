@@ -1,0 +1,99 @@
+/* @group EPCL Modules */
+
+// Slider
+.epcl-slider{
+    padding: 0;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: $section-padding;
+    @include transition(1000ms);
+    margin-bottom: $section-padding;
+    .slick-prev, .slick-next{
+        top: 45%;
+    }
+    &.slick-initialized{
+        visibility: visible;
+        height: inherit;
+        opacity: 1;
+    }
+    .item{
+        margin-bottom: 120px;        
+        article{
+            position: relative;
+            z-index: 3;
+            display: flex;
+            min-height: 500px;
+            box-sizing: border-box;
+            margin: 0 15px;            
+        }
+        .img{
+            @include absolute-element;
+            object-fit: cover;
+        }
+        .info{
+            min-width: 600px;
+            max-width: 600px;
+            margin: auto auto -100px;
+            padding: 25px 40px;
+            text-align: center;
+            position: relative;
+            z-index: 11;
+            background-color: $white;
+            box-shadow: 0px 6px 10px 0px rgba(#000, 0.15);
+            opacity: 0;
+            transform: translateY(50px);
+            
+            .title{
+                margin-top: 5px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .slick-current{
+        .info{
+            transform: translateY(0px);
+            opacity: 1;
+            @include transition(600ms);
+        }
+    }
+
+}
+
+// Popular Categories Carousel
+.epcl-popular-categories{
+    margin-top: $section-padding;
+    .slick-slider{
+        margin: 0 -10px;
+    }
+    .slick-track{
+        margin-left: 0;
+    }
+    .item{
+        height: 175px;
+        position: relative;
+        margin: 0 10px;
+        overflow: hidden;
+        background: $background-color;
+        box-shadow: 0px 3px 6px rgba(#000, 0.15);
+        .title{
+            position: absolute;
+            left: 0;
+            bottom: 15px;
+            margin: 0;
+            background: $white;
+            padding: 10px 15px;   
+            line-height: 1;
+            font-size: 20px;  
+        }
+        .count{
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin: 0 1px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+    }
+}
+
+/* @end */

@@ -1,0 +1,114 @@
+<!-- start: #sidebar -->
+<aside id="sidebar" role="complementary" class="grid-30 tablet-grid-30 hide-on-tablet hide-on-mobile">
+
+  <!-- start: .widget-recent-articles -->
+  <div class="widget widget-recent-articles">
+    <h4 class="title medium bordered">{{t "Latest Articles" }}</h4>
+    {{#get "posts" limit="3" as |recent-sidebar| }}
+      {{#foreach recent-sidebar}}
+        <article class="{{post_class}} item {{^if feature_image}}no-thumb{{/if}}">
+          {{#if feature_image}}
+            <a href="{{url}}" class="thumb hover-effect grid-33 grid-parent">
+                            <span class="fullimage cover" style="background: url({{img_url feature_image size="widget_thumb"}});"></span>
+                        </a>
+          {{/if}}
+          <div class="info">
+            <h4 class="title usmall"><a href="{{url}}">{{title}}</a></h4>
+            <div class="meta">
+              <time class="small" datetime="{{date format='YYYY-MM-DD'}}"><i class="remixicon remixicon-time-line"></i>{{date}}</time>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </article>
+      {{/foreach}}
+    {{/get}}
+  </div>
+  <!-- end: .widget-recent-articles -->
+
+  <!-- start: .widget -->
+  <section class="widget">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- GTM - Sidebar -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3799479098488751"
+        data-ad-slot="1895992919"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+	</section>
+  <!-- end: .widget -->
+
+  <!-- start: .tag-cloud -->
+  <section class="widget widget-categories">
+    <h3 class="title medium bordered">{{t "Topic" }}</h3>
+    {{#get "tags" limit = "30" include="count.posts" order="count.posts DESC" }}
+      <ul>
+        {{#foreach tags}}
+          <li class="tag-{{slug}}">
+            <a href="{{url}}" title="{{name}}" class="tag tag-{{slug}}">{{name}}</a>
+            <span class="count ctag ctag-{{slug}}">{{count.posts}}</span>
+          </li>
+        {{/foreach}}
+      </ul>
+    {{/get}}
+    <div class="clear"></div>
+  </section>
+  <!-- end: .tag-cloud  -->
+
+  
+
+
+
+  {{!-- <!-- start: .widget -->
+	<section class="widget widget-text">
+        <h4 class="widget-title title medium bordered">Text Widget</h4>
+		<div class="textwidget">
+			<p>Text widget content...</p>
+            <p>Text widget content...</p>
+		</div>
+		<div class="clear"></div>
+	</section>
+	<!-- end: .widget -->    --}}
+
+  {{!-- <!-- start: .widget-tag-cloud -->
+    <div class="widget widget-tag-cloud">
+        <h4 class="widget-title title medium bordered">{{t "Tag cloud" }}</h4>
+        {{#get "tags" limit="30"}}
+            {{#foreach tags}}
+                <a href="{{url}}" class="ctag ctag-{{slug}}" data-id="ctag-{{slug}}">{{name}}</a>
+            {{/foreach}}
+        {{/get}}
+    </div>
+    <!-- end: .widget-tag-cloud  --> --}}
+
+  {{!-- Uncomment to enable facebook or twitter widgets --}}
+  {{!-- <!-- start: .widget -->
+	<section class="widget">
+		<h4 class="widget-title title medium bordered">Facebook</h4>
+		<div class="fb-page" data-href="https://www.facebook.com/ghost" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"></div></div>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="clear"></div>
+	</section>
+	<!-- end: .widget --> --}}
+
+  {{!-- <!-- start: .widget -->
+	<section class="widget">
+		<h4 class="widget-title title medium bordered">Twitter</h4>
+        <a class="twitter-timeline" href="https://twitter.com/WordPress" data-height="400" data-widget-id="644274778728177664">Tweets by @WordPress.</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		<div class="clear"></div>
+	</section>
+	<!-- end: .widget --> --}}
+
+</aside>
+<!-- end: #sidebar -->

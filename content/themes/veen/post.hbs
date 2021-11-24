@@ -1,0 +1,214 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{#post}}
+
+<!-- start: #single -->
+<main id="single" class="main grid-container {{^has tag='classic'}}fullcover{{else}}classic{{/has}}" data-aos="fade">
+
+    {{#if feature_image}}
+        {{^has tag="classic"}}        
+            <div class="featured-image cover content">
+                <img src="{{img_url feature_image size="single_fullcover"}}" alt="{{title}}" class="fullwidth">
+                <div class="info">
+                    <h1 class="title ularge">{{title}}</h1>
+                </div>
+            </div>
+        {{/has}}
+    {{/if}}
+
+    <!-- start: .content -->
+    <div class="content">
+
+        <div class="row">
+
+            <!-- start: .content -->
+            <div class="left-content grid-container {{#has tag="classic,sidebar"}} grid-70{{else}} grid-small{{/has}} np-mobile">
+
+                <article class="main-article {{post_class}}">
+
+                    {{#has tag="classic"}}
+                        <header>
+                            {{#if feature_image}}
+                                <div class="featured-image">
+                                    <img src="{{img_url feature_image size="single_standard"}}" alt="{{title}}" class="fullwidth">
+                                    <div class="info">
+                                        <h1 class="main-title title">{{title}}</h1>    
+                                    </div>
+                                </div>
+                            {{/if}}
+                                
+                            <div class="clear"></div>
+                        </header>
+                    {{/has}}
+
+                    {{^if feature_image}}
+                        <div class="info textcenter">
+                            <h1 class="main-title title">{{title}}</h1>
+                        </div>
+                    {{/if}}
+
+                    {{> meta-info}}
+
+                    <section class="post-content">
+
+                        <div class="text">{{content}}</div>
+
+                        {{#if tags}}
+                            <div class="tags textcenter">
+                                <i class="remixicon remixicon-price-tag-3-line"></i>
+                                {{#foreach tags}}
+                                    <span class="ctag ctag-{{slug}} {{slug}}">, </span><a href="{{url}}" title="{{name}}" class="ctag ctag-{{slug}} {{slug}}">{{name}}</a>
+                                {{/foreach}}
+                            </div>
+                        {{/if}}    
+
+                        <div class="epcl-border small"></div>
+
+                    </section>
+
+                </article>
+                <div class="clear"></div>
+
+                {{#primary_author}}
+                    <!-- start: .author -->
+                    <section id="author" class="author section {{#if profile_image}} with-avatar{{else}} no-avatar{{/if}}">
+                        <h3 class="title medium bordered">{{t "About the Author"}}</h3>
+                        <div class="flex">
+                            <div class="avatar">
+                                {{#if profile_image}}
+                                    <a href="{{url}}" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url( {{profile_image}} );"></span></a>
+                                {{/if}}
+                            </div>
+                            <div class="info">
+                                <h4 class="title small author-name"><a href="{{url}}">{{name}}</a></h4>
+                                <p class="position"><span class="dot small"></span>&nbsp; {{location}}</p>
+                                <div class="social">
+                                    {{#if twitter}}
+                                        <a href="{{twitter_url}}" class="twitter tooltip" title="{{ t 'Follow me on Twitter' }} " target="_blank"><i class="fa fa-twitter"></i></a>
+                                    {{/if}}
+                                    {{#if facebook}}
+                                        <a href="{{facebook_url}}" class="facebook tooltip" title="{{ t 'Follow me on Facebook' }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    {{/if}}
+                                    {{#if website}}
+                                        <a href="{{website}}" class="website tooltip" title="{{ t 'Website' }}: {{website}}" target="_blank"><i class="remixicon remixicon-earth-line"></i></a>
+                                    {{/if}}
+                                    
+                                </div>
+                                <p>{{bio}}</p>
+
+                                <div class="clear"></div>
+                                <a href="{{url}}" class="button">{{t "View All Articles"}}</a>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        
+                    </section>
+                    <!-- end: .author -->
+                    <div class="epcl-border small"></div>
+                {{/primary_author}}
+
+                
+                <div class="clear"></div>
+
+                <!-- start: disqus integration -->
+                <div id="comments" class="section">
+                    <h3 class="title bordered no-margin">{{t "Comments" }}</h3>
+                    <div id="disqus_thread"></div>
+                </div>
+
+                <script>
+                    /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                        */
+                    var disqus_shortname = theme_config.disqus_shortname; // required: replace example with your forum shortname
+                    var disqus_config = function () {
+                        this.page.url = '{{@site.url}}{{url}}';  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = '{{comment_id}}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+
+                    (function() {  // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+
+                        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+                <!-- end: disqus integration -->
+
+                {{#get "posts" filter="primary_tag:{{primary_tag.slug}}" limit="6" as |related-articles| }}
+                    <section class="related section np-bottom">
+                        <h3 class="title bordered">{{t "You might also like"}}</h3>
+                        <div class="row">
+                            {{#foreach related-articles}}
+                                <article class="prev grid-33 tablet-grid-33 mobile-grid-50 {{post_class}}">
+                                    <a href="{{url}}" class="hover-effect"><img src="{{img_url feature_image size="single_related"}}"></a>
+                                    <div class="info">
+                                        <h4 class="title white usmall no-margin"><a href="{{url}}">{{title}}</a></h4>
+                                        <time class="small" datetime="{{date format='YYYY-MM-DD'}}">{{date}}</time>
+                                    </div>
+                                </article>
+                            {{/foreach}}
+                            <div class="clear"></div>
+                        </div>
+                    </section>
+                {{/get}}
+
+                <section class="siblings section">
+                    <h3 class="title bordered no-margin">{{t "Other Stories" }}</h3>
+                    {{#prev_post}}
+                        <article class="next mask-effect">
+                            {{#if feature_image}}
+                                <div class="thumb cover" style="background: url({{img_url feature_image size="single_fullcover"}});"></div>
+                            {{/if}}
+                            <a href="{{url}}" class="full-link"></a>       
+                            <div class="info">                
+                                <h4 class="title medium mask no-margin">{{title}}</h4>     
+                            </div>                         
+                            <span class="epcl-button secondary hide-on-mobile">{{t "Next Story"}}</span>
+                        </article>
+                    {{/prev_post}}
+
+                    {{#next_post}}
+                        <article class="prev mask-effect">
+                            {{#if feature_image}}
+                                <div class="thumb cover" style="background: url({{img_url feature_image size="single_fullcover"}});"></div>
+                            {{/if}}
+                            <a href="{{url}}" class="full-link"></a>       
+                            <div class="info">                
+                                <h4 class="title small mask no-margin">{{title}}</h4>     
+                            </div>                         
+                            <span class="epcl-button secondary hide-on-mobile">{{t "Previous Story"}}</span>
+                        </article>
+                    {{/next_post}}
+                    <div class="clear"></div>
+                </section>
+
+
+                <div class="clear"></div>
+            </div>
+            <!-- end: .content -->
+
+            {{#has tag="classic,sidebar"}}
+                {{> sidebar }}
+            {{/has}}
+            
+
+            <div class="clear"></div>
+
+        </div>
+
+    </div>
+    <!-- end: .content -->
+
+</main>
+<!-- end: #single -->
+
+{{/post}}

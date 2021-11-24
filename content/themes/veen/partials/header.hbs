@@ -1,0 +1,56 @@
+<!-- start: #header -->
+<header id="header" class="grid-container">
+
+	<div class="menu-mobile">
+		<i class="remixicon remixicon-menu-2-line"></i>
+	</div>
+
+	<!-- start: .menu-wrapper -->
+	<div class="menu-wrapper">
+	
+		<div class="">
+            
+		    <a href="#search-lightbox" class="lightbox epcl-search button circle mfp-inline"><i class="remixicon remixicon-search-line"></i></a>
+
+			{{#if @site.logo}}
+				<div class="logo" ><a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}"></a></div>
+			{{else}}
+				<div class="logo text-logo">
+					<a href="{{@site.url}}" class="title ularge no-margin">{{@site.title}}<span class="dot"></span></a>
+				</div>
+			{{/if}}            
+			
+			<!-- start: .main-nav -->
+			<nav class="main-nav grid-container grid-parent">				
+				{{navigation}}				
+			</nav>
+			<!-- end: .main-nav -->
+
+            <div class="clear"></div>
+		
+		</div>		
+        
+		<div class="clear"></div>
+		
+	</div>
+	<!-- end: .menu-wrapper -->
+	
+	<div class="clear"></div>
+
+</header>
+<!-- end: #header -->
+
+<div id="form-lang" data-results-title="{{t 'Results for your search'}}"></div>
+
+<div class="hide-on-desktop hide-on-tablet hide-on-mobile">
+    <div id="search-lightbox" class="mfp-hide grid-container grid-small grid-parent">
+        <h4 class="title small white textcenter fw-normal hide-on-mobile hide-on-tablet">{{{t "Press {key} to close" key="<span>ESC</span>"}}}</h4>
+        <div class="search-wrapper section">                
+            <form action="{{@site.url}}" method="get" class="search-form">
+                <input type="text" name="s" id="s" value="" class="search-field" placeholder="{{t "Type to start your seach..."}}" required>
+                <button type="submit" class="submit"><i class="remixicon remixicon-search-line"></i></button>
+            </form>
+        </div>
+        <div id="search-results" class="grid-container section"></div>
+    </div>
+</div>

@@ -1,0 +1,177 @@
+/* @group Header */
+
+#header{
+    position: relative;
+    z-index: 2;
+	div.menu-mobile{ display: none; }
+    div.menu-wrapper{ 
+        padding: 50px 0px 0;
+    }
+	.logo {
+		text-align: center;
+		margin: 20px auto;
+		a {
+			display: inline-block;
+			color: $black;
+			i.fa{
+				margin-right: 10px;
+				vertical-align: middle;
+				position: relative;
+				top: -3px;
+			}
+			img {
+				display: block;
+				max-width: 100%;
+                height: auto;
+                margin: 0 auto;
+            }
+            &:hover{
+                transform: translateY(-2px);
+            }
+        }
+        &.text-logo{
+            .dot{
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background-color: $main-color;
+                border-radius: 50%;
+                margin-left: 5px;
+                vertical-align: baseline;
+            }
+        }
+    }
+    .epcl-search{
+        margin-top: 20px;
+        position: absolute;
+        right: $grid-gap;
+    }
+    .epcl-border{
+        margin: 20px 0 0;
+    }
+
+}
+
+// Main Navigation
+.main-nav{
+    position: relative;
+    z-index: 100;
+    text-align: center;
+    ul.menu{ 
+        font-size: 0px;
+        > li.menu-item-has-children{ margin-right: 10px; padding-right: 15px; }
+    }
+    ul.menu li{
+        display: inline-block;
+        padding: 20px 17px 0;
+        position: relative;
+        &.subscribe-menu-item{
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        &.menu-item-has-children:after{
+            font-family: 'FontAwesome';
+            content: '\f107';
+            display: block;
+            color: $black;
+            position: absolute;
+            font-size: 14px;
+            right: 0;
+            top: 50%;
+            z-index: 5;
+            transform: translateY(-50%);
+            margin-top: 0px;
+        }
+    }
+    ul.menu li a{
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.25;
+        position: relative;
+        z-index: 1;
+        color: $black;
+        font-weight: 500;
+        &.lightbox{
+            background: none;
+            font-size: 20px;
+            top: -7px;
+            vertical-align: middle;
+        }
+    }
+    ul.menu li a:hover,
+    ul.menu li.current-menu-item > a, ul.menu > li.current-menu-ancestor > a{
+        color: $main-color;
+    }
+    ul.sub-menu{
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 100;
+        padding: 15px 0;
+        background: $white;
+        min-width: 250px;
+        text-align: left;
+        left: -20px;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0px 3px 6px 0px rgba(#000, 0.15);
+        transform: translateY(-15px);
+        @include transition(500ms);
+        li{
+            display: block;
+            padding: 0;
+            &.current-menu-item a{
+                font-weight: 500;
+            }
+            &.menu-item-has-children:after{
+                display: none;
+                right: 10px;
+                content: '\f105';
+            }
+        }
+        li a{
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            color: $black;
+            padding: 10px 25px;
+            background-image: linear-gradient(to right, rgba(#fff, 0.05), rgba(#fff, 0.05));
+            background-repeat: no-repeat;
+            background-size: 100% 0px;
+            background-position: 0 100%;
+            box-shadow: none;
+            &:hover{
+                // background-size: 100% 100%;
+                color: $main-color;
+            }
+        }
+        ul.sub-menu{
+            left: 100%;
+            top: -15px;
+            transform: scale(1) translateX(-10px);
+        }
+    }
+    ul.menu li:hover > ul.sub-menu{
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1) translateY(0px);
+    }
+    ul.menu > li.menu-item-has-children.last-menu-item{
+        ul.sub-menu{
+            left: auto;
+            right: 0;
+            ul.sub-menu{
+                left: auto;
+                right: 100%;
+            }
+        }
+        
+    }
+}
+
+@keyframes headerPinnedSlideDown{
+	0% {top:-100%;}
+	100%{top:0;}
+}
+
+/* @end */

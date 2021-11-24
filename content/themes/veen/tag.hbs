@@ -1,0 +1,52 @@
+{{!< default}}
+
+<main id="archives" class="main" data-aos="fade-up">
+
+
+        {{#tag}}
+
+            <div class="grid-container grid-medium tag-description section">
+  
+                <div class="left grid-35 tablet-grid-45 np-mobile">
+                    <span class="icon"><svg><use xlink:href="#tag"></use></svg></span>
+                    <h1 class="title medium no-margin">{{name}}</h1>
+                    <div class="total"><span class="dot"></span> {{plural ../pagination.total empty=(t "0  Articles") singular=(t "1 Article") plural=(t "% Articles")}}</div>
+                </div>
+                {{#if description}}
+                    <div class="right grid-65 tablet-grid-55 np-tablet np-mobile">
+                        <p>{{description}}</p>
+                    </div>
+                {{/if}}
+                
+                <div class="clear"></div>
+
+            </div>
+  
+        {{/tag}}	
+
+        <div class="content-wrapper grid-container np-mobile">
+            
+            <div class="left-content grid-70 grid-parent np-mobile">
+                <!-- start: .articles -->
+                <div class="articles">
+                            
+                    {{#foreach posts}}
+                        {{> loop/default-article}}                 
+                    {{/foreach}}
+                    
+                </div>
+                <!-- end: .articles -->
+                
+                {{pagination}}
+            </div>
+
+            {{> sidebar }}
+        
+        </div>
+
+
+
+
+    <div class="clear"></div>
+
+</main>

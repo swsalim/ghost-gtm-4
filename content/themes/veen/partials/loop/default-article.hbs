@@ -1,0 +1,58 @@
+<article class="default tablet-grid-100 classic-large index-{{@index}} {{post_class}}">
+    <div class="article-wrapper">
+
+        <header>
+            {{#if feature_image}}
+                <div class="post-format-wrapper">
+                    <div class="featured-image mask-effect">
+                        <a href="{{url}}" class="thumb">
+                            <span class="fullimage cover lazy" data-src="{{ img_url feature_image size="single_fullcover" }}"></span>
+                        </a>
+                        <h2 class="post-title title large" data-aos="fade" data-aos-offset="100">
+                            <a href="{{url}}" class="mask">{{title}}</a>
+                        </h2>
+                        <a href="{{url}}" class="continue-reading button secondary hide-on-mobile">{{t "Continue Reading"}}</a>     
+                    </div>
+                </div>
+                <!-- start: .meta -->
+                <div class="meta absolute">
+                    <a href="{{url}}#comments" class="comments meta-info" title="{{t "Go to comments"}}">
+                        <i class="remixicon remixicon-chat-3-fill"></i> 
+                        <span class="disqus-comment-count" data-disqus-url="{{@site.url}}{{url}}" data-disqus-identifier="{{comment_id}}">0</span>
+                    </a>                
+                </div>
+                <!-- end: .meta -->
+            {{else}}
+                <div class="info textcenter">
+                    <h2 class="main-title title large"><a href="{{url}}">{{title}}</a></h2>
+                </div>
+            {{/if}}
+            <div class="clear"></div>
+        </header>        
+
+        <!-- start: .right -->
+        <div class="bottom grid-container grid-small np-mobile">     
+
+            {{> meta-info }}
+
+            <div class="post-excerpt">                    
+                {{excerpt words="37"}}...
+                <div class="clear"></div>                
+            </div>     
+            
+            {{#if tags}}
+                <div class="tags">
+                    <i class="remixicon remixicon-price-tag-3-line"></i>
+                    {{#foreach tags}}
+                        <span class="ctag ctag-{{slug}} {{slug}}">, </span><a href="{{url}}" title="{{name}}" class="ctag ctag-{{slug}} {{slug}}">{{name}}</a>
+                    {{/foreach}}
+                </div>
+            {{/if}}      
+
+        </div>   
+        <!-- end: .right -->
+        <div class="clear"></div>
+
+        <div class="epcl-border small"></div>
+    </div>
+</article>

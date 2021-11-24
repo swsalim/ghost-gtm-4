@@ -1,0 +1,13 @@
+<!-- start: .meta -->
+<div class="meta">
+    {{#primary_author}}
+        <a href="{{url}}" class="author meta-info" title="{{name}}">
+            <span class="author-image cover" style="background-image: url({{profile_image}});"></span>
+            <span class="author-name">{{name}}</span>
+        </a>
+    {{/primary_author}}  
+    <time datetime="{{date format='YYYY-MM-DD'}}" class="meta-info">{{date format="MMMM DD, YYYY"}}</time>    
+    <div class="min-read"><span class="count">{{reading_time}}</span> {{t "Min Read"}}</div>
+    <div class="clear"></div>                                    
+</div>
+<!-- end: .meta -->

@@ -1,0 +1,96 @@
+{{!< default}}
+
+<main id="home" class="main">
+
+    {{#get "posts" limit="6" filter="featured:true" include="tags,authors" as |slider| }}
+        <!-- start: .epcl-slider -->
+        <section class="epcl-slider outer-arrows section" data-show="1" data-aos="fade">
+            {{#foreach slider}}
+                <div class="item">
+                    <article>                    
+                        <img class="img" src="{{asset 'images/transparent.gif'}}" data-lazy="{{ img_url feature_image size="single_fullcover" }}"
+                        data-srcset="{{img_url feature_image size="loop"}} 700w,
+                                {{img_url feature_image size="single_standard"}} 768w,
+                                {{img_url feature_image size="single_fullcover"}} 1500w"
+                        data-sizes="(max-width: 767px) 700px, (max-width: 1024px) 768px, 1500px" alt="{{title}}">
+                        <a href="{{url}}" class="full-link"></a>
+                        <!-- .info -->
+                        <div class="info">
+                            {{#if tags}}
+                                <div class="tags">
+                                    <i class="remixicon remixicon-price-tag-3-line"></i>
+                                    {{#foreach tags}}
+                                        <span class="ctag ctag-{{slug}} {{slug}}">, </span><a href="{{url}}" title="{{name}}" class="ctag ctag-{{slug}} {{slug}}">{{name}}</a>
+                                    {{/foreach}}
+                                </div>
+                            {{/if}}   
+                            <h1 class="post-title title large">
+                                <a href="{{url}}">{{title}}</a>
+                            </h1>
+                            <div class="hide-on-mobile">
+                                {{> meta-info }}            
+                            </div>            
+                        </div>
+                        <!-- end: .info -->
+                        <div class="overlay"></div>
+                    </article>
+                </div>
+            {{/foreach}}
+        </section>
+        <!-- end: .epcl-slider -->
+    {{/get}}
+
+    <div class="grid-container grid-large">
+
+    <div class="row">
+      
+        <div class="content-wrapper content">
+            
+            <div class="left-content np-mobile">
+                <!-- start: .articles -->
+                <div class="articles classic">
+                            
+                    {{#foreach posts}}
+                        {{> loop/default-article}}                 
+                    {{/foreach}}
+                    
+                </div>
+                <!-- end: .articles -->
+                
+                {{pagination}}
+            </div>
+
+            <div class="clear"></div>
+        
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+    <div class="epcl-border hide-on-mobile"></div>
+
+    <!-- start: .epcl-popular-categories -->
+    <section class="epcl-popular-categories hide-on-mobile" data-aos="fade" data-offset="0">
+        <h3 class="title bordered">{{t "Popular Categories" }}</h3>
+        {{#get "tags" limit = "30" include="count.posts" order="count.posts DESC" }}
+            <div class="slick-slider">
+                {{#foreach tags}}
+                    {{#if feature_image}}
+                        <div class="slick-item tag-{{slug}}">
+                            <div class="item cover mask-effect {{#if feature_image}}background{{/if}}" {{#if feature_image}}style="background: url('{{img_url feature_image size="single_related"}}');"{{/if}}>
+                                <h4 class="title medium mask">{{count.posts}} &nbsp;<span class="dot"></span> {{name}}</h4>                    
+                                <a href="{{url}}" class="full-link"></a>
+                            </div>  
+                        </div>
+                    {{/if}}
+                {{/foreach}}
+            </div>
+        {{/get}}
+        <div class="clear"></div>
+    </section>
+    <!-- end: .epcl-popular-categories -->
+
+    </div>
+
+</main>

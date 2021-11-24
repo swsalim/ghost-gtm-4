@@ -1,0 +1,34 @@
+/* @group Sidebar */
+
+div.left-content{
+    padding-right: 40px;
+    .classic &{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .grid-sidebar &{
+        padding: 0;
+    }
+}
+.no-active-sidebar div.left-content{ width: auto; float: none; }
+#sidebar{
+    border: 0;
+    position: relative;
+    z-index: 2;
+    float: right;
+    padding: 0;
+	.widget{
+        position: relative;
+        padding: 0 $grid-gap;
+        margin-bottom: $section-padding;    
+        &:last-child{ margin-bottom: 0; }
+        .grid-sidebar &:first-child{
+            padding-top: 25px;
+        }
+    }
+    &.is-affixed .inner-wrapper-sticky{
+        padding: 0 $grid-gap;
+    }
+}
+
+/* @end */

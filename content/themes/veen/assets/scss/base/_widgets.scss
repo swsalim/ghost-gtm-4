@@ -1,0 +1,177 @@
+/* Sidebar Widgets */
+
+.widget{
+    &:after{
+        display: block;
+        clear: both;
+        content: '';
+        width: 50px;
+        height: 1px;
+        margin: 30px auto 0;
+        background-color: $border-color;
+    }
+    &:last-child{
+        &:after{ display: none; }
+    }
+}
+
+.widget-text{
+    .textwidget{
+        margin-top: -9px;
+    }
+    p{ margin-bottom: 20px; }
+    p:last-of-type{ margin-bottom: 0; }
+}
+
+.widget-categories, .widget-menu{
+    font-size: 14px;
+    ul li{
+        text-align: right;
+        padding-left: 0px;
+        background: none;
+        line-height: 30px;
+        margin-bottom: 8px;
+		padding-bottom: 8px;
+        border-bottom: 1px solid $border-color;
+        &:last-of-type{ margin-bottom: 0 !important; border-bottom: 0; padding-bottom: 0; border-image: none; }
+    }
+    ul li span{
+        display: inline-block;
+        padding: 0;
+        color: #fff;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        font-weight: bold;
+        font-size: 12px;
+        box-sizing: border-box;
+        top: -2px;
+        position: relative;
+        border-radius: 50%;
+    }
+    ul > li{
+        clear: both;
+        a{
+            float: left;
+        }
+        &:before, &:after{
+            content: '';
+            display: block;
+            width: 100%;
+            clear: both;
+        }
+    }
+    
+}
+
+// Tag Cloud
+.widget-tag-cloud{
+    @extend div.tags;
+    display: block;
+    div.tagcloud{ margin-left: -3px; }
+	a{
+        display: inline-block;
+        font-size: 14px;
+        padding: 2px 12px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        color: #fff;
+        background-color: $main-color;
+        &:hover{
+            color: #fff;
+            transform: translateY(-2px);
+        }
+		.tag-link-count{ margin-left: 2px; }
+	}
+}
+
+// Recent Posts with image
+.widget-recent-articles{
+	.info{ padding-top: 0px; }
+	.item{
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 100px;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        &.no-thumb{
+            padding: 0;
+        }
+        .title{
+            margin-bottom: 0px;
+        }
+        .thumb{ 
+            width: 80px; 
+            height: 80px;
+            min-height: inherit; 
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 0;
+        }
+		time{
+            font-family: $font-family;
+            font-weight: normal;
+            padding: 0;
+            &:before{
+                display: none;
+            }
+            i{
+                display: inline-block;
+                color: $main-color;
+                font-size: 16px;
+                vertical-align: middle;
+                margin-right: 3px;
+                margin-top: -3px;
+            }
+			svg{ margin-right: 5px; width: 14px; height: 14px; vertical-align: middle; margin-top: -3px; fill: lighten($text-color, 15%); }
+		}
+		&:last-of-type{ margin-bottom: 0; }
+	}
+    aside & .item a:before{ border: none; }
+}
+
+// Instagram
+.widget-instagram{
+	div.loading{ text-align: center; padding: 20px 0; }
+	&.loaded .loading{ display: none; }
+	ul{ margin: 0 -5px; }
+    ul li{ 
+        display: block; padding: 0 2px 4px;
+        .wrapper{
+            // border-radius: 15px;
+            overflow: hidden;
+        }
+        a{
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            background-position: center center;
+            background-repeat: no-repeat;           
+            background-size: cover;
+            padding-top: 100%;
+            &:hover:before{
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+            span.cover{
+                height: 100%;
+                width: 101%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+.widget_epcl_instagram ul li a{
+    padding-top: 17.5%;
+}
+
+/* @end */

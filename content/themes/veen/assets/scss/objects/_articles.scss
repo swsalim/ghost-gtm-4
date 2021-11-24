@@ -1,0 +1,245 @@
+/* @group Global Articles List */
+time {
+  position: relative;
+  padding-left: 18px;
+  color: $meta-color;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    margin-top: -3px;
+    border-radius: 50%;
+    background-color: $main-color;
+    @include transition;
+  }
+
+  &.small {
+    padding-left: 12px;
+    font-size: 12px;
+    line-height: 1;
+
+    &:before {
+      width: 4px;
+      height: 4px;
+      margin-top: -2px;
+    }
+  }
+}
+
+// Articles loop
+div.articles {
+  article {
+    max-width: $grid-medium;
+    margin: 0 auto;
+    padding-bottom: $section-padding;
+    text-align: center;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    .main-title {
+      margin-bottom: 25px;
+    }
+
+    .article-wrapper {
+      position: relative;
+      z-index: 1;
+      padding: 0;
+    }
+
+    .post-format-wrapper {
+      margin-bottom: 30px;
+
+      &:hover {
+        .continue-reading {
+          right: 30px;
+          opacity: 1;
+        }
+      }
+    }
+
+    .continue-reading {
+      position: absolute;
+      z-index: 3;
+      right: 0;
+      bottom: 40px;
+      opacity: 0;
+      @include transition(700ms);
+    }
+
+    .post-title {
+      position: absolute;
+      z-index: 3;
+      bottom: 45px;
+      left: 40px;
+      max-width: 55%;
+      margin: 0;
+      padding: 15px 30px;
+      padding: 0;
+      text-align: left;
+
+      a {
+        display: inline;
+        padding: 14px 22px 10px;
+      }
+    }
+
+    a.thumb {
+      display: block;
+      min-height: 440px;
+    }
+
+    div.post-excerpt {
+      margin: $element-padding 0;
+    }
+  }
+
+  // Posts Formats
+  .post-format-wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2), 0 22px 27px -20px rgba(7, 10, 25, 0.2);
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .main-title {
+    margin-bottom: 25px;
+  }
+}
+
+/* Global Meta data */
+div.meta {
+  color: $meta-color;
+  font-family: $title-font-family;
+  font-weight: $fw-semibold;
+
+  a {
+    color: $meta-color;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  &.absolute {
+    position: absolute;
+    z-index: 10;
+    top: 25px;
+    right: 20px;
+    padding: 3px 10px;
+    border-radius: 25px;
+    background-color: $secondary-color;
+
+    .meta-info {
+      margin: 0 3px;
+      color: $white;
+      font-size: 13px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      i {
+        display: inline-block;
+        margin-top: -3px;
+        font-size: 14px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .min-read {
+    display: inline-block;
+
+    span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-top: -3px;
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: $secondary-color;
+      color: $white;
+      font-size: 13px;
+      line-height: 21px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+
+  .meta-info {
+    margin-right: 10px;
+    font-size: 15px;
+  }
+
+  .author {
+    .author-image {
+      display: inline-block;
+      position: relative;
+      top: -1px;
+      left: auto;
+      width: 35px;
+      height: 35px;
+      margin-right: 7px;
+      border-radius: 50%;
+      box-shadow: 2px 2px 5px 1px rgba(#000000, 0.2);
+      vertical-align: middle;
+
+      &.small {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+/* @end */
+/* @group Global Pagination */
+.pagination {
+  padding-bottom: 0;
+  text-align: center;
+
+  div.nav {
+    display: inline-block;
+
+    >span {
+      display: inline-block;
+      height: 36px;
+      margin: 0 10px;
+      padding: 0 15px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 36px;
+      // font-family: $title-font-family;
+      // border-radius: $border-radius;
+      // text-shadow: 0px 0px 1px rgba(0,0,0,0.15);
+    }
+
+    a {
+      display: inline-block;
+      height: 36px;
+      padding: 0 20px;
+      border-radius: $border-radius;
+      line-height: 36px;
+      vertical-align: top;
+
+      span {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+/* @end */

@@ -1,0 +1,130 @@
+/*------------------------------------*\
+    			SETTINGS
+\*------------------------------------*/
+
+/* @group Font Families */
+
+// $font-family: "DM Sans", "Roboto", sans-serif;
+$font-family: 'Averta',- apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-weight: 400;
+$font-size: 16px; // General content font size
+$line-height: 1.8;
+
+$font-size-editor: 16px; // Single Content font size
+$line-height-editor: 2;
+$font-weight-editor: 400;
+
+// $title-font-family: 'Josefin Sans', sans-serif;
+$title-font-family: 'Averta',- apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$title-font-size: 32px;
+
+// Font Weight
+$fw-regular: 400;
+$fw-semibold: 500;
+$fw-bold: 600;
+$fw-xbold: 700;
+
+/* @end */
+
+/* @group Colors */
+
+// $main-color: #FF486A;
+// $secondary-color: #7169FE;
+$main-color: #ff7473;
+$secondary-color: #47b8e0;
+$black: #242323;
+
+$black1: #111; // 
+
+// Content
+
+$background-color: #fff; // Body background color
+$text-color: #596172; // Primary text color
+$meta-color: #424851;
+$white: #fff;
+$light-gray: #555;
+$border-color: #eee;
+$input-bg-color: #fff;
+
+// Social Colors
+
+$twitter-color: #1DA1F2;
+$instagram-color: #EF00A2;
+$facebook-color: #175BEB;
+$linkedin-color: #0077b5;
+$pinterest-color: #EE3E52;
+$dribbble-color: #D97AA6;
+$tumblr-color: #5F7990;
+$youtube-color: #fb5555;
+$flickr-color: #EF3998;
+$twitch-color: #8551e6;
+$vk-color: #6299dc;
+$telegram-color: #0088cc;
+$rss-color: #f26522;
+
+$lighten: 9%; //Lighten amount for hovers and overlays, example: subscribe input box background
+$darken: 9%; //Darken amount for hovers and overlays, example: search box background
+
+$border-radius: 25px;
+$border-radius-sections: 0px;
+
+/* @end */
+
+/* @group Effects speed */
+
+$transition-time: 300ms;
+$transition-method: ease;
+
+/* @end */
+
+/* @group Content Width and Margins */
+
+$editor-base-unit: 32px; // Space between paragraphs and titles (post content)
+$section-padding: 50px; // Padding top and bottom for containers, example: sidebar widgets, suscribe form
+$element-padding: 24px;
+
+$grid-container: 1200px; // Max width for the theme
+$grid-usmall: 600px;
+$grid-small: 780px;
+$grid-medium: 990px;
+$grid-large: 1400px;
+$grid-ularge: 1600px;
+$grid-gap: 20px; // Space betweens grids elements
+
+@font-face {
+  font-family: Averta;
+  src:  url('../fonts/averta-regular.woff2') format("woff2"),
+        url('../fonts/averta-regular.woff') format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Averta;
+  src:  url('../fonts/averta-semibold.woff2') format("woff2"),
+        url('../fonts/averta-semibold.woff') format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Averta;
+  src:  url('../fonts/averta-bold.woff2') format("woff2"),
+        url('../fonts/averta-bold.woff') format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Averta;
+  src:  url('../fonts/averta-black.woff2') format("woff2"),
+        url('../fonts/averta-black.woff') format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @end */

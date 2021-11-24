@@ -1,0 +1,63 @@
+{
+
+    "Press {key} to close": "Preiona {key} para cerrar",
+    "Type to start your seach...": "Escribe para iniciar tu búsqueda...",
+	"Results for your search": "Resultados para tu búsqueda",
+
+    "By": "Por",
+	"Page": "Página",
+	"of": "de",
+    "Previous": "Anterior",
+    "Next": "Siguiente",
+    
+    "Continue Reading": "Continuar Leyendo",
+
+    "Min Read": "Min de Lectura",
+
+    "Popular Categories": "Categorías Populares",
+
+	"Comments": "Comentarios",
+    "Go to comments": "Ir a los comentarios",
+    "About the Author": "Acerca del Autor",
+    "View All Articles": "Ver Sus Artículos",
+    "You might also like": "Tal vez te interese",
+    "Other Stories": "Otras Historias",
+    "Latest Articles": "Últimos Artículos",
+    "Next Story": "Siguiente Historia",
+    "Previous Story": "Historia Anterior",
+    "Advertising": "Publicidad",
+    "Categories": "Categorías",
+    "Tag cloud": "Nube de etiquetas",
+    "Menu": "Menu",
+
+    "0 Articles": "0 Artículos",
+    "1 Article": "1 Artículo",
+    "% Articles": "% Artículos",
+
+	"Location": "Ubicación",
+	"Website": "Sitio Web",
+	"Follow me on Twitter": "Sígueme en Twitter",
+    "Follow me on Facebook": "Sígueme en Facebook",
+    "Share Article:": "Compartir Artículo:",
+
+	"Page not found": "Página no encontrada",
+	"Something's wrong here...": "Algo esta mal aquí...",
+	"We can't find the page you're looking.": "No hemos podido encontrar lo que buscas.",
+    "Go back to home": "Volver al inicio",
+    
+    "Published with": "Publicado con",
+    
+    "January": "Enero",
+    "February": "Febrero",
+    "March": "Marzo",
+    "April": "Abril",
+    "May": "Mayo",
+    "June": "Junio",
+    "July": "Julio",
+    "August": "Agosto",
+    "September": "Septiembre",
+    "October": "Octubre",
+    "November": "Noviembre",
+    "December": "Diciembre"
+
+}

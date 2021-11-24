@@ -1,0 +1,148 @@
+@mixin button {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  padding: 5px 25px;
+  border-radius: 25px;
+  background-color: $main-color;
+  box-shadow: 0 3px 6px rgba(#000000, 0.3);
+  color: $white;
+  font-family: $title-font-family;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  @include transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba($main-color, 0.75);
+    color: $white;
+  }
+
+  &.secondary {
+    background-color: $secondary-color;
+
+    &:hover {
+      box-shadow: 0 3px 6px rgba($secondary-color, 0.75);
+    }
+  }
+
+  &.small {
+    padding: 5px 15px;
+    font-size: 12px;
+  }
+
+  &.medium {
+    padding: 7px 25px;
+    font-size: 14px;
+  }
+
+  &.large {
+    padding: 8px 25px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  &.icon {
+    i {
+      position: relative;
+      top: -2px;
+      vertical-align: middle;
+    }
+  }
+
+  &.circle {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 44px;
+    text-align: center;
+
+    i.fa {
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  // By Color
+  &.dark {
+    background-color: $black;
+    background-image: none;
+    box-shadow: none;
+  }
+
+  &.dark:hover {
+    background-color: lighten($black, 5%);
+    color: #ffffff;
+  }
+
+  & i.fa {
+    margin-left: 5px;
+    font-size: 85%;
+  }
+}
+
+.button,
+.epcl-button:not(.epcl-shortcode) {
+  @include button;
+}
+
+/* Global Tags */
+div.tags {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+
+  a {
+    color: $black;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  i {
+    display: inline-block;
+    margin-top: -3px;
+    margin-right: 3px;
+    color: $main-color;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  span:first-of-type {
+    display: none;
+  }
+}
+
+// Reserved Tags
+a[href='sidebar'],
+span.sidebar,
+a[href='classic'],
+span.classic,
+a[href*='nosidebar'],
+span.nosidebar,
+a[href*='fullcover'],
+span.fullcover {
+  display: none !important;
+}
+
+.ctag-sidebar,
+li.tag-sidebar,
+.ctag-classic,
+li.tag-classic,
+.ctag-fullcover,
+li.tag-fullcover,
+.ctag-nosidebar,
+li.tag-nosidebar,
+.ctag-bgstyle,
+li.tag-bgstyle {
+  display: none !important;
+}
+
+/* @end */

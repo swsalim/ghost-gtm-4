@@ -1,0 +1,6 @@
+<ul class="menu">
+	{{#foreach navigation}}
+		<li class="nav-{{slug}}{{#if current}} current-menu-item{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+	{{/foreach}}
+    {{!-- <a class="hide-on-mobile hide-on-tablet"><a href="#search-lightbox" class="lightbox mfp-inline"><i class="remixicon remixicon-search-line"></i></a></a> --}}
+</ul>

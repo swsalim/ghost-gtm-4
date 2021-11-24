@@ -1,0 +1,59 @@
+{
+	"name": "veen",
+	"version": "1.2.0",
+	"demo": "http://ghost.estudiopatagon.com/veen",
+    "engines": {
+        "ghost": ">=2.0.0",
+        "ghost-api": "v2"
+    },
+	"author": {
+		"name": "Estudio Patagon",
+        "email": "admin@estudiopatagon.com",
+        "url": "https://estudiopatagon.com"
+	},
+	"gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Magazine"
+        ]
+    },
+	"config": {
+        "posts_per_page": 6,
+        "image_sizes": {
+            "avatar_thumb": {
+                "width": 70,
+                "height": 70
+            },
+            "widget_thumb": {
+                "width": 160,
+                "height": 160
+            },
+            "loop": {
+                "width": 700,
+                "height": 500
+            },
+            "single_standard": {
+                "width": 760,
+                "height": 400
+            },
+            "single_fullcover": {
+                "width": 1500,
+                "height": 500
+            },
+            "single_related": {
+                "width": 500,
+                "height": 450
+            },
+            "slider": {
+                "width": 1700,
+                "height": 600
+            }
+        }
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ]
+}

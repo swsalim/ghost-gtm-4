@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+  {{! Document Settings }}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PJC92VP');</script>
+  <!-- End Google Tag Manager -->
+
+  {{! Page Meta }}
+  <title>{{meta_title}}</title>
+
+  {{! Mobile Support }}
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {{! Styles'n'Scripts }}
+  <link rel="shortcut icon" href="{{asset 'favicon.ico' }}">
+
+  {{! Theme Styles }}
+  <link href="{{asset 'dist/style.min.css' }}" type="text/css" rel="stylesheet">
+  <link href="{{asset 'dist/plugins.min.css' }}" type="text/css" rel="preload" as="style" onload="this.rel='stylesheet'">
+
+  <script>
+  // Theme Config, check the documentation before edit this file
+  var search_engine_key = '9d76034560ab50da179e628563'; // example: e08514f918d175f017584aaf34
+  var search_api = "/ghost/api/v2/content/posts/?key=" + search_engine_key + "&limit=all&include=tags";
+  var theme_config = {
+    sticky_sidebar: 'on', // on / off
+    disqus_shortname: 'greenteaormatcha', // You can create your own Disqus Comments here: https://disqus.com/admin/create/
+    month_names: ['{{t "January"}}', '{{t "February"}}', '{{t "March"}}', '{{t "April"}}', '{{t "May"}}', '{{t "June"}}', '{{t "July"}}', '{{t "August"}}', '{{t "September"}}', '{{t "October"}}', '{{t "November"}}', '{{t "December"}}']
+  };
+  </script>
+
+  {{ghost_head}}
+
+</head>
+
+<body class="{{#if @site.cover_image}}cover{{/if}} {{body_class}}" {{#if @site.cover_image}}style="background: url({{@site.cover_image}}) no-repeat center center fixed;" {{/if}}>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJC92VP"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  {{> svg-icons}}
+
+  <!-- start: .mobile.main-nav -->
+  <nav class="mobile main-nav hide-on-desktop" role="navigation">
+    {{navigation}}
+  </nav>
+  <!-- end: .mobile.main-nav -->
+
+  <div class="menu-overlay hide-on-desktop"></div>
+
+  <!-- start: #wrapper -->
+  <div id="wrapper">
+
+    {{> header}}
+
+    {{{body}}}
+
+    {{> footer}}
+
+  </div>
+  <!-- end: #wrapper -->
+
+  {{ghost_foot}}
+  <script src="{{asset 'dist/scripts.min.js' }}" defer></script>
+</body>
+
+</html>
